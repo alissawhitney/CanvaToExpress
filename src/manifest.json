@@ -1,0 +1,29 @@
+{
+	"testId": "4741d628-4bd6-4352-83ec-ac282a427137",
+	"name": "Canva to Express",
+	"version": "1.0.2",
+	"manifestVersion": 2,
+	"requirements": {
+		"apps": [
+			{
+				"name": "Express",
+				"apiVersion": 1
+			}
+		]
+	},
+	"entryPoints": [
+		{
+			"type": "panel",
+			"id": "panel1",
+			"main": "index.html",
+			"permissions": {
+				"sandbox": [
+					"allow-popups-to-escape-sandbox",
+					"allow-popups",
+					"allow-presentation",
+					"allow-downloads"
+				]
+			}
+		}
+	]
+}

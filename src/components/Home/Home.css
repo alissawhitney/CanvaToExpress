@@ -1,0 +1,230 @@
+.homePanelOverrides {
+	height: 100%;
+	min-width: 293px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	box-sizing: border-box;
+}
+
+.wrapper {
+	position: relative;
+	width: 270px;
+	height: 370px;
+	border: 1px dashed #000;
+	overflow: hidden;
+	flex-direction: row;
+	display: flex;
+	align-content: center;
+	flex: nowrap;
+	justify-content: center;
+
+}
+
+.topContainer {
+	flex-direction: column;
+	align-items: center;
+	width: min-content;
+	height: min-content;
+	justify-content: center;
+	flex-shrink: 0;
+	align-self: center;
+}
+
+.imageContainer {
+	position: relative;
+	overflow: visible;
+}
+
+#fillImage {
+	position: absolute;
+	/*
+	height: calc(100% + (var(--bleedInPx) * 2));
+	width: calc(100% + (var(--bleedInPx) * 2));
+	top: calc(0px - (var(--bleedInPx)));
+	left: calc(0px - (var(--bleedInPx)));
+	*/
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center center;
+	opacity: 0.4;
+}
+
+.fillerContainer {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -2;
+	overflow: visible; 
+}
+
+.originalImage {
+	background-repeat: no-repeat;
+	/* background-size: calc(100% + (var(--bleedInPx) * 2)) calc(100% + (var(--bleedInPx) * 2)); */
+	background-position: center center;
+	opacity: 1;
+	
+
+}
+.originalImage img {
+	opacity: 0;
+}
+
+:root {
+	/* Settings are computed @ 300 dpi with 1/8" bleed */
+	--bleedInPx: 18px; 
+	--trimOffsetFromEdge: calc(var(--bleedInPx) * 0.3);
+}
+
+#bleedColorFiller {
+	position: absolute;
+	background-color: #f00;
+	opacity: 0.2;
+}
+
+.trimMarkHorizontal {
+	position: relative;
+	z-index: 10;
+	/*
+	width: calc(var(--bleedInPx) * 2);
+	height: calc(var(--bleedInPx) * 2); */
+	border-bottom: 1px solid #000;
+
+}
+
+.trimMarkVertical {
+	position: relative;
+	z-index: 10;
+	/*
+	width: calc(var(--bleedInPx) * 2);
+	height: calc(var(--bleedInPx) * 2);
+	*/
+	border-left: 1px solid #000;
+	}
+
+.topLeft.trimMarkVertical {
+	position: absolute;
+	/*
+	top: calc(0px - (var(--bleedInPx) * 2) - var(--trimOffsetFromEdge));
+	*/
+ } 
+ .topLeft.trimMarkHorizontal {
+	position: absolute;
+	/*
+	left: calc(0px - (var(--bleedInPx) * 2) - var(--trimOffsetFromEdge));
+	top: calc(0px - (var(--bleedInPx) * 2));
+	*/
+ }  
+
+ .bottomLeft.trimMarkVertical {
+	position: absolute;
+	/*
+	bottom: calc(0px - (var(--bleedInPx) * 2) - var(--trimOffsetFromEdge));
+	*/
+ } 
+ .bottomLeft.trimMarkHorizontal {
+	position: absolute; 
+	/*
+	left: calc(0px - (var(--bleedInPx) * 2) - var(--trimOffsetFromEdge));
+	bottom: calc(0px - (var(--bleedInPx) * 2));
+	*/
+	border-bottom: none;
+	border-top: 1px solid #000;
+ } 
+ 
+ .topRight.trimMarkVertical {
+	position: absolute;
+	/*
+	top: calc(0px - (var(--bleedInPx) * 2) - var(--trimOffsetFromEdge));
+	*/
+	right: calc(0px);
+	border-left: none;
+	border-right: 1px solid #000;
+ } 
+ .topRight.trimMarkHorizontal {
+	position: absolute;
+	/*
+	right: calc(0px - (var(--bleedInPx) * 2) - var(--trimOffsetFromEdge));
+	top: calc(0px - (var(--bleedInPx) * 2));
+	*/
+ }  
+
+ .bottomRight.trimMarkVertical {
+	position: absolute;
+	/*
+	bottom: calc(0px - (var(--bleedInPx) * 2) - var(--trimOffsetFromEdge));
+	*/
+	right: calc(0px);
+	border-left: none;
+	border-right: 1px solid #000;
+ } 
+ .bottomRight.trimMarkHorizontal {
+	position: absolute;
+	/*
+	right: calc(0px - (var(--bleedInPx) * 2) - var(--trimOffsetFromEdge));
+	bottom: calc(0px - (var(--bleedInPx) * 2));
+	*/
+	border-bottom: none;
+	border-top: 1px solid #000;
+ } 
+
+ .wrapper.noBleed .fillerContainer  {
+	opacity: 0;
+ }
+
+ .loadingContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+	background-color: rgba(255, 255, 255, 0.8);
+	z-index: 10;
+ }
+
+ .documentInfo {
+	flex-direction: column;
+	justify-content: center;
+	align-content: flex-start;
+	gap: 5px;
+ }
+
+ .documentInfo.color {
+	margin-bottom: 20px;
+ }
+
+ .documentInfo.size {
+	margin-bottom: 10px;
+ }
+
+ .documentWarning {
+	flex-direction: column;
+	justify-content: center;
+	align-content: flex-start;
+	gap: 5px;
+	margin-top: 10px;
+	color: #b00 !important;
+ }
+
+ .documentWarning Text {
+
+ }
+
+ .topBanner {
+	background-color: #000 !important;
+	color: #fff;
+	padding: 10px 25px;
+ }
+
+
+ .pdf-export-dropdown {
+	width: 350px !important;
+ }
+ 
+ .bold {
+	font-weight: bold;
+ }
